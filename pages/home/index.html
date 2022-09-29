@@ -7,11 +7,79 @@
     <title>Control Finance</title>
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
     <meta name="description" content="Control Finance - Seu controle financeiro">
+    <link rel="stylesheet" href="../../styles/buttons.css">
+    <link rel="stylesheet" href="../../styles/colors.css">
+    <link rel="stylesheet" href="../../styles/display.css">
+    <link rel="stylesheet" href="../../styles/fonts.css">
+    <link rel="stylesheet" href="../../styles/modal.css">
+    <link rel="stylesheet" href="../../styles/nav.css">
+    <link rel="stylesheet" href="../../styles/sizes.css">
+    <link rel="stylesheet" href="../../styles/spacing.css">
     <link rel="stylesheet" href="/styles/globalStyles.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <main id="app"></main>
+    <div class="modalWrapper hide">
+        <section class="modal">
+            <div class = "div__modal-1">
+                <span class="div__modal-1-span">Registro de valor</span>
+                <button class="div__modal-1-button">X</button>
+            </div>
+            <div class = "div__modal-2">
+                <p class="">Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
+            </div>
+            <div class = "div__modal-3">
+                <span class="div__modal-3-span">Valor</span>
+                <input class="div__modal-3-input" type="text" placeholder="Placeholder">
+            </div>
+            <div class = "div__modal-4">
+                <span class="div__modal-4__span">Tipo de valor</span>
+                <div class="div__modal-4__div-1">
+                    <button class="div__modal-4__div-1-button">Entrada</button>
+                    <button class="div__modal-4__div-1-button">Saída</button>
+                </div>
+                <div class="div__modal-4__div-2">
+                    <button class="div__modal-4__div-2__btn-1">Cancelar</button>
+                    <button class="div__modal-4__div-2__btn-2" >Inserir valor</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="background_menu backgroundColor-1 full_w">
+        <header class="full container">
+            <div class="header__div full flex__column gap-5 desktop_nav">
+                <h1 class="header__div-h1 title1-bold">Control <span class="header__div-span">Finance</span></h1>
+                <button class="header__div-button full text3-medium button__primary">Registrar novo valor</button>
+            </div>
+        </header>
+    </div>
+    <main id="app" class="container main flex__column align__start justify__center gap-1">
+        <section class="section1 full_w flex__column, justify__center align__start, align__start desktop_filter">
+                <h2 class="title-2-medium mb-1 desktop_financialResume_formatting">Resumo financeiro</h2>
+                <div class="section-1__div flex__row gap-3">
+                    <button class="button button__outline text3-medium">Todos</button>
+                    <button class="button button__outline text3-medium">Entradas</button>
+                    <button class="button button__outline text3-medium">Saídas</button>
+                </div>
+        </section>
+        <section class="section-2 flex__row justify__between align__center backgroundColor-1 full_w">
+                <span class="text2-medium">Soma dos valores</span>
+                <span class="text2-medium">Valor Total</span>
+        </section>
+        <section class="empty_list full_w flex__column justify__around align__center gap-6 backgroundColor-1">
+            <span class="title2-bold">Nenhum valor registrado</span>
+            <span class="text2-medium">Registrar novo valor</span>
+        </section>
+        <ul class = "full_w flex__column gap-5">
+            <li class="section-3__li flex__row justify__between align__center backgroundColor-3 full_w">
+                <span class="text2-medium">Valor</span>
+                <div class="section-3__li__div flex__row justify__between align__center gap-4">
+                    <span class="section-3__li__div-span backgroundColor-2 text2-regular">Entrada</span>
+                    <button class="button__trash"><img class="trash" src="../../assets/trash.svg" alt=""></button>
+                </div>
+            </li>
+        </ul>
+    </main>
     <script src="/scripts/modal.js"></script>
     <script src="valuesData.js"></script>
     <script src="index.js"></script>
