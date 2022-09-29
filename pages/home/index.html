@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,45 +11,19 @@
     <link rel="stylesheet" href="../../styles/colors.css">
     <link rel="stylesheet" href="../../styles/display.css">
     <link rel="stylesheet" href="../../styles/fonts.css">
-    <link rel="stylesheet" href="../../styles/modal.css">
     <link rel="stylesheet" href="../../styles/nav.css">
     <link rel="stylesheet" href="../../styles/sizes.css">
     <link rel="stylesheet" href="../../styles/spacing.css">
+    <link rel="stylesheet" href="../../styles/modal.css">
     <link rel="stylesheet" href="/styles/globalStyles.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="modalWrapper hide">
-        <section class="modal">
-            <div class = "div__modal-1">
-                <span class="div__modal-1-span">Registro de valor</span>
-                <button class="div__modal-1-button">X</button>
-            </div>
-            <div class = "div__modal-2">
-                <p class="">Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
-            </div>
-            <div class = "div__modal-3">
-                <span class="div__modal-3-span">Valor</span>
-                <input class="div__modal-3-input" type="text" placeholder="Placeholder">
-            </div>
-            <div class = "div__modal-4">
-                <span class="div__modal-4__span">Tipo de valor</span>
-                <div class="div__modal-4__div-1">
-                    <button class="div__modal-4__div-1-button">Entrada</button>
-                    <button class="div__modal-4__div-1-button">Saída</button>
-                </div>
-                <div class="div__modal-4__div-2">
-                    <button class="div__modal-4__div-2__btn-1">Cancelar</button>
-                    <button class="div__modal-4__div-2__btn-2" >Inserir valor</button>
-                </div>
-            </div>
-        </section>
-    </div>
     <div class="background_menu backgroundColor-1 full_w">
         <header class="full container">
             <div class="header__div full flex__column gap-5 desktop_nav">
                 <h1 class="header__div-h1 title1-bold">Control <span class="header__div-span">Finance</span></h1>
-                <button class="header__div-button full text3-medium button__primary">Registrar novo valor</button>
+                <button id="btnRegistry" class="header__div-button full text3-medium button__primary">Registrar novo valor</button>
             </div>
         </header>
     </div>
@@ -80,7 +54,7 @@
             </li>
         </ul>
     </main>
-    <script src="/scripts/modal.js"></script>
+    <script src="../../scripts/modal.js"></script>
     <script src="valuesData.js"></script>
     <script src="index.js"></script>
 </body>

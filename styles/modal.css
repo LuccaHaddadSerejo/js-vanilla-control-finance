@@ -1,39 +1,22 @@
-
 .modalWrapper{
-    background-color: rgba(0, 0, 0,0.44);
+    background-color: var(--color-grey-1-opacity-5);
     position: fixed;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    bottom: 0;
 }
 
 .modal{
     position: absolute;
-    background-color: white;
+    background-color: var(--fixed-white);
     width: 92%;
     max-width: 500px;
     height: 430px;
-    margin:0 auto;
-    display: flex;
-    flex-direction: column;
+    margin-top: 50px;
     gap: 25px;
-    border-radius: 8px;
+    border-radius: var(--radius-1);
     padding: 24px;
-}
-
-.div__modal-1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.div__modal-1-span{
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    color: #212529;
+    bottom: 300px;
+    animation: animateModal 0.2s ease;
+    
 }
 
 .div__modal-1-button{
@@ -41,84 +24,48 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
-    color: #495057;
+    color: var(--color-grey-2);
     padding: 4px 12px;
-    background: #F1F3F5;
-    border-radius: 4px;
+    background: var(--color-grey-5);
+    border-radius: var(--radius-2);
     border: none;
     cursor: pointer;
 }
 
-.div__modal-2{
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    color: #495057;
-}
-
 .div__modal-3{
-    display: flex;
-    flex-direction: column;
     gap: 8px;
-}
-
-.div__modal-3-span{
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    color: #212529;
 }
 
 .div__modal-3-input{
     height: 44px;
-    width: 100%;
     padding: 0 16px;
-    border: 1.5px solid #ADB5BD;
+    border: 1.5px solid var(--color-grey-4);
     border-radius: 8px;
-    color: #212529;
+    color: var(--color-grey-1);
 }
 
-
-.div__modal-4{
-    display: flex;
-    flex-direction: column;
-}
 
 .div__modal-4__span{
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    color: #212529;
     margin-bottom: 16px;
 }
 
 .div__modal-4__div-1{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
     gap: 12px;
     margin-bottom:28px;
 }
 
 .div__modal-4__div-1-button{
     height: 32px;
-    width: 100%;
     padding: 0 16px;
-    border: 1.5px solid #ADB5BD;
-    border-radius: 8px;
-    color: #212529;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
+    border: 1.5px solid var(--color-grey-4);
+    border-radius: var(--radius-1);
     cursor: pointer;
+    background-color: var(--fixed-white);
+    color: var(--color-grey-2);
 }
 
 .div__modal-4__div-2{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
     gap: 16px;
-    height: fit-content;
 }
 
 .div__modal-4__div-2__btn-1{
@@ -126,31 +73,33 @@
     width: 50%;
     padding: 7px 14px;
     gap: 10px;
-    background: #E9ECEF;
+    background: var(--color-grey-4);
     border: none;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    color: #495057;
-    border-radius: 8px;
+    color: var(--color-grey-2);
+    border-radius: var(--radius-1);
     cursor: pointer;
 }
 
 .div__modal-4__div-2__btn-2{
-    background: #6741D9;
-    color: #FFFFFF;
+    background: var(--color-brand-1);
+    color: var(--fixed-white);
     height: 31px;
     width: 50%;
     padding: 7px 14px;
     gap: 10px;
     border: none;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    border-radius: 8px;
+    border-radius: var(--radius-1);
     cursor: pointer;
 }
 
-.hide{
-    display: none;
-}
+@keyframes animateModal {
+    0% {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
