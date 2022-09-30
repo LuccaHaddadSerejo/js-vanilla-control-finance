@@ -80,6 +80,7 @@ body {
 
   .modal{
     height: 350px;
+    top: 100px;
   }
   
   .desktop_modal_divTwo{
@@ -106,4 +107,5 @@ body {
     bottom: 75px;
     width: 24%;
   }
+
 }

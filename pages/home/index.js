@@ -46,6 +46,7 @@ let renderList = (valuesList) => {
               listItemsDiv.classList = 'section-3__li__div flex__row justify__between align__center gap-4'
               listItemsDivSpan.classList = 'section-3__li__div-span backgroundColor-2 text2-regular'
               listItemsDivBtn.classList = 'button__trash'
+              listItemsDivBtnImg.classList = "button_trash_img"
 
               listItemsSpan.innerText = `R$ ${objectFull.value}`
               if(objectFull.categoryID == 0){
