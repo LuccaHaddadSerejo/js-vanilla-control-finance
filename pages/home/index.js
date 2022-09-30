@@ -66,7 +66,7 @@ let renderList = (valuesList) => {
                   }else{
                     insertedValues.splice(findIndex, 1)
                     valuesList.splice(findIndex, 1)
-                    sumOfValues(insertedValues)
+                    sumOfValues(valuesList)
                     renderList(valuesList) 
                   }                                                      
               })
@@ -75,8 +75,8 @@ let renderList = (valuesList) => {
               listItemsDiv.append(listItemsDivSpan, listItemsDivBtn)
               listItems.append(listItemsSpan, listItemsDiv)
               listValues.append(listItems)
-
           });
+
       return main.append(listValues)
   }
 }
