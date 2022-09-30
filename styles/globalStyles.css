@@ -77,4 +77,33 @@ body {
     position: relative;
     top: 16px;
   }
+
+  .modal{
+    height: 350px;
+  }
+  
+  .desktop_modal_divTwo{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .desktop_modal_divOne-button-1{
+    position: relative;
+    left: 98px;
+    bottom: 43px;
+    width: 24%;
+  }
+
+  .desktop_modal_divOne-button-2{
+    position: relative;
+    left: 220px;
+    bottom: 87px;
+    width: 24%;
+  }
+
+  .desktop_modal_buttons-2{
+    position: relative;
+    bottom: 75px;
+    width: 24%;
+  }
 }

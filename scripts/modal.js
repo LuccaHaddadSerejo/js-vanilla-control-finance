@@ -38,14 +38,14 @@ btnRegisterValue.addEventListener('click', function(){
     modalDivThree.classList = 'div__modal-3 flex__column'
     modalDivThreeSpan.classList = 'text2-medium'
     modalDivThreeInput.classList = 'div__modal-3-input full_w'
-    modalDivFour.classList = 'flex__column'
+    modalDivFour.classList = 'flex__column desktop_modal'
     modalDivFourSpan.classList = 'text2-medium mb-2'
-    modalDivFourDiv.classList = 'div__modal-4__div-1 full_w flex__column'
-    modalDivFourDivBtnOne.classList = 'div__modal-4__div-1-button full_w text3-medium'
-    modalDivFourDivBtnTwo.classList = 'div__modal-4__div-1-button full_w text3-medium'
-    modalDivFourDivTwo.classList = 'div__modal-4__div-2 full_w flex__row justify__between'
-    modalDivFourDivTwoBtnOne.classList = 'div__modal-4__div-2__btn-1 text3-medium'
-    modalDivFourDivTwoBtnTwo.classList = 'div__modal-4__div-2__btn-2 text3-medium'
+    modalDivFourDiv.classList = 'div__modal-4__div-1 full_w flex__column desktop_modal'
+    modalDivFourDivBtnOne.classList = 'div__modal-4__div-1-button full_w text3-medium desktop_modal_divOne-button-1'
+    modalDivFourDivBtnTwo.classList = 'div__modal-4__div-1-button full_w text3-medium desktop_modal_divOne-button-2'
+    modalDivFourDivTwo.classList = 'div__modal-4__div-2 full_w flex__row justify__between desktop_modal_divTwo'
+    modalDivFourDivTwoBtnOne.classList = 'div__modal-4__div-2__btn-1 text3-medium desktop_modal_buttons-2'
+    modalDivFourDivTwoBtnTwo.classList = 'div__modal-4__div-2__btn-2 text3-medium desktop_modal_buttons-2'
   
     modalWrapper.id = 'wrapper'
   
@@ -75,7 +75,7 @@ btnRegisterValue.addEventListener('click', function(){
             modalDivFourDivBtnOne.innerText = "Entrada"
             modalDivFourDivBtnTwo.innerText = 'Saída!'
         }else{
-            modalDivFourDivBtnTwo.innerText = 'Saída'
+            modalDivFourDivBtnTwo.innerText = 'Saída!'
         }
     })
 
@@ -100,6 +100,8 @@ btnRegisterValue.addEventListener('click', function(){
             categoryID: 1,
         }
             insertedValues.push(newObject)
+    }else{
+        alert ('Escolha uma categoria!ythh')
     }
     
     sumOfValues(insertedValues)

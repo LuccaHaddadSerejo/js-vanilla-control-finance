@@ -1,10 +1,8 @@
 const listValues = document.createElement('ul')
-  listValues.id = 'ulFull'
+listValues.id = 'ulFull'
 const btnFilterAll = document.getElementById('filterAll')
 const btnFilterEntrada = document.getElementById('filterEntrada')
 const btnFilterSaida = document.getElementById('filterSaida')
-
-
 const valuesCategory = ["Entrada", "Saída"];
 
 
@@ -51,18 +49,25 @@ let renderList = (valuesList) => {
 
               listItemsSpan.innerText = `R$ ${objectFull.value}`
               if(objectFull.categoryID == 0){
-                listItemsDivSpan.innerText = 'entrada'
+                listItemsDivSpan.innerText = valuesCategory[0]
               }else if(objectFull.categoryID == 1){
-                listItemsDivSpan.innerText = 'saída'
+                listItemsDivSpan.innerText = valuesCategory[1]
               }
               listItemsDivBtnImg.src = '../../assets/trash.svg'
 
               listItemsDivBtn.addEventListener('click', function(){
                   listValues.innerHTML = ''
-                  
-                  valuesList.splice(objectFull, 1)
-                  sumOfValues(insertedValues)
-                  renderList(valuesList)   
+                  let findIndex = valuesList.indexOf(objectFull)
+                  if(valuesList == insertedValues){
+                    insertedValues.splice(findIndex, 1)  
+                    sumOfValues(insertedValues)
+                    renderList(valuesList) 
+                  }else{
+                    insertedValues.splice(findIndex, 1)
+                    valuesList.splice(findIndex, 1)
+                    sumOfValues(insertedValues)
+                    renderList(valuesList) 
+                  }                                                      
               })
                  
               listItemsDivBtn.append(listItemsDivBtnImg)
@@ -100,6 +105,7 @@ sumOfValues(insertedValues)
 
 btnFilterAll.addEventListener('click', function(){
     listValues.innerHTML = ''
+    sumOfValues(insertedValues)
     renderList(insertedValues)
 })
 
@@ -107,12 +113,14 @@ btnFilterAll.addEventListener('click', function(){
 btnFilterEntrada.addEventListener('click', function(){
   let filteringEntrada = insertedValues.filter(objectFull => objectFull.categoryID == 0)
   listValues.innerHTML = ''
+  sumOfValues(filteringEntrada)
   renderList(filteringEntrada)
 })
 
 btnFilterSaida.addEventListener('click', function(){
   let filteringSaida = insertedValues.filter(objectFull => objectFull.categoryID == 1)
   listValues.innerHTML = ''
+  sumOfValues(filteringSaida)
   renderList(filteringSaida)
 })
 
