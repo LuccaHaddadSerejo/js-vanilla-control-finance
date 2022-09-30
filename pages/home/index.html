@@ -31,28 +31,13 @@
         <section class="section1 full_w flex__column, justify__center align__start, align__start desktop_filter">
                 <h2 class="title-2-medium mb-1 desktop_financialResume_formatting">Resumo financeiro</h2>
                 <div class="section-1__div flex__row gap-3">
-                    <button class="button button__outline text3-medium">Todos</button>
-                    <button class="button button__outline text3-medium">Entradas</button>
-                    <button class="button button__outline text3-medium">Saídas</button>
+                    <button id="filterAll" class="button button__outline text3-medium">Todos</button>
+                    <button id="filterEntrada" class="button button__outline text3-medium">Entradas</button>
+                    <button id="filterSaida" class="button button__outline text3-medium">Saídas</button>
                 </div>
         </section>
-        <section class="section-2 flex__row justify__between align__center backgroundColor-1 full_w">
-                <span class="text2-medium">Soma dos valores</span>
-                <span class="text2-medium">Valor Total</span>
+        <section id="sectionSum" class="section-2 flex__row justify__between align__center backgroundColor-1 full_w">
         </section>
-        <section class="empty_list full_w flex__column justify__around align__center gap-6 backgroundColor-1">
-            <span class="title2-bold">Nenhum valor registrado</span>
-            <span class="text2-medium">Registrar novo valor</span>
-        </section>
-        <ul class = "full_w flex__column gap-5">
-            <li class="section-3__li flex__row justify__between align__center backgroundColor-3 full_w">
-                <span class="text2-medium">Valor</span>
-                <div class="section-3__li__div flex__row justify__between align__center gap-4">
-                    <span class="section-3__li__div-span backgroundColor-2 text2-regular">Entrada</span>
-                    <button class="button__trash"><img class="trash" src="../../assets/trash.svg" alt=""></button>
-                </div>
-            </li>
-        </ul>
     </main>
     <script src="../../scripts/modal.js"></script>
     <script src="valuesData.js"></script>

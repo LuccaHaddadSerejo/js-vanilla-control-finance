@@ -1,6 +1,5 @@
 const btnRegisterValue = document.getElementById('btnRegistry')
 
-
 btnRegisterValue.addEventListener('click', function(){
 
     const htmlReference = document.querySelector('body')
@@ -22,7 +21,13 @@ btnRegisterValue.addEventListener('click', function(){
     const modalDivFourDivTwo = document.createElement('div')
     const modalDivFourDivTwoBtnOne = document.createElement('button')
     const modalDivFourDivTwoBtnTwo = document.createElement('button')
-
+  
+  
+    modalDivThreeInput.type = "number"
+    modalDivThreeInput.required = true
+    modalDivThreeInput.id = "inputAddValue"
+  
+  
     modalWrapper.classList = 'modalWrapper flex__row justify__center align__center full_w full_h'
     modalMain.classList = 'modal flex__column'
     modalDivOne.classList = 'flex__row justify__between align__center'
@@ -41,9 +46,10 @@ btnRegisterValue.addEventListener('click', function(){
     modalDivFourDivTwo.classList = 'div__modal-4__div-2 full_w flex__row justify__between'
     modalDivFourDivTwoBtnOne.classList = 'div__modal-4__div-2__btn-1 text3-medium'
     modalDivFourDivTwoBtnTwo.classList = 'div__modal-4__div-2__btn-2 text3-medium'
-
+  
     modalWrapper.id = 'wrapper'
-
+  
+    modalDivThreeInput.placeholder = "R$"
     modalDivOneSpan.innerText = 'Registro de valor'
     modalDivOneBtn.innerText = 'X'
     modalDivTwoP.innerText = 'Digite o valor e em seguida aperte no botão referente ao tipo do valor'
@@ -53,17 +59,67 @@ btnRegisterValue.addEventListener('click', function(){
     modalDivFourDivBtnTwo.innerText = 'Saída'
     modalDivFourDivTwoBtnOne.innerText = 'Cancelar'
     modalDivFourDivTwoBtnTwo.innerText = 'Inserir valor'
+  
+    
+    modalDivFourDivBtnOne.addEventListener('click', function(){
+        if(modalDivFourDivBtnTwo.innerText == "Saída!"){
+            modalDivFourDivBtnTwo.innerText = "Saída"
+            modalDivFourDivBtnOne.innerText = 'Entrada!'
+        }else{
+            modalDivFourDivBtnOne.innerText = 'Entrada!'
+        }
+    })
 
+    modalDivFourDivBtnTwo.addEventListener('click', function(){
+        if(modalDivFourDivBtnOne.innerText == "Entrada!"){
+            modalDivFourDivBtnOne.innerText = "Entrada"
+            modalDivFourDivBtnTwo.innerText = 'Saída!'
+        }else{
+            modalDivFourDivBtnTwo.innerText = 'Saída'
+        }
+    })
+
+
+    let counterIDs = 0
+    let registerNewValues = () => {
+  
+    let wrapper = document.getElementById('wrapper')
+    let counterUpdated = counterIDs++
+    listValues.innerHTML = ''
+    if(modalDivFourDivBtnOne.innerText == "Entrada!"){
+    let newObject = {
+        id:counterUpdated,
+        value: +modalDivThreeInput.value,
+        categoryID: 0,
+    }
+        insertedValues.push(newObject)
+    }else if(modalDivFourDivBtnTwo.innerText = 'Saída!'){
+        let newObject = {
+            id:counterUpdated,
+            value: +modalDivThreeInput.value,
+            categoryID: 1,
+        }
+            insertedValues.push(newObject)
+    }
+    
+    sumOfValues(insertedValues)
+    renderList(insertedValues)
+    wrapper.remove()
+    }
+  
+    modalDivFourDivTwoBtnTwo.addEventListener('click', registerNewValues)
+  
+  
     modalDivOneBtn.addEventListener('click', function(){
         let wrapper = document.getElementById('wrapper')
         return wrapper.remove()
     })
-
+  
     modalDivFourDivTwoBtnOne.addEventListener('click', function(){
         let wrapper = document.getElementById('wrapper')
         return wrapper.remove()
     })
-
+  
     modalDivFourDiv.append(modalDivFourDivBtnOne, modalDivFourDivBtnTwo)
     modalDivFourDivTwo.append(modalDivFourDivTwoBtnOne, modalDivFourDivTwoBtnTwo)
     modalDivFour.append(modalDivFourSpan, modalDivFourDiv, modalDivFourDivTwo)
@@ -72,6 +128,7 @@ btnRegisterValue.addEventListener('click', function(){
     modalDivOne.append(modalDivOneSpan, modalDivOneBtn)
     modalMain.append(modalDivOne, modalDivTwo, modalDivThree, modalDivFour)
     modalWrapper.append(modalMain)
-
+  
     htmlReference.append(modalWrapper)
-})
+  })
+  

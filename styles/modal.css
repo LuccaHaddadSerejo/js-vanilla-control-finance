@@ -42,6 +42,14 @@
     border: 1.5px solid var(--color-grey-4);
     border-radius: 8px;
     color: var(--color-grey-1);
+    outline: var(--color-brand-1);
+}
+
+.div__modal-3-input:focus{
+    border-color: var(--color-brand-1);
+}
+.div__modal-3-input:active{
+    border-color: var(--color-brand-1);
 }
 
 
@@ -63,6 +71,28 @@
     background-color: var(--fixed-white);
     color: var(--color-grey-2);
 }
+
+.div__modal-4__div-1-button:hover{
+    background-color: var(--color-brand-3);
+    border: 1.5px solid var(--color-brand-1);
+    color: var(--color-brand-1);
+    outline: none;
+}
+
+.div__modal-4__div-1-button:active{
+    background-color: var(--color-brand-3);
+    border: 1.5px solid var(--color-brand-1);
+    color: var(--color-brand-1);
+    outline: none;
+}
+
+.div__modal-4__div-1-button:focus{
+    background-color: var(--color-brand-3);
+    border: 1.5px solid var(--color-brand-1);
+    color: var(--color-brand-1);
+    outline: none;
+}
+
 
 .div__modal-4__div-2{
     gap: 16px;
